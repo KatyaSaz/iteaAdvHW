@@ -10,14 +10,7 @@ public class MinerMain {
 		new GoldMiner("golden miner 1", mine);
 		new GoldMiner("golden miner 2", mine);
 		new GoldMiner("golden miner 3", mine);
-
-		for (int i = 4; !(mine.isEmpty()); i++) {
-			try {
-				TimeUnit.SECONDS.sleep(10);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			new GoldMiner("golden miner " + i, mine);
-		}
+		
+		new Barrack(mine);
 	}
 }
