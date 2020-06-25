@@ -38,7 +38,7 @@ public class Cashier implements Runnable {
 					e.printStackTrace();
 				}
 			} else {
-				isClosed=true;
+				isClosed = true;
 				System.out.println("Mcdonalds is close.");
 			}
 		}
