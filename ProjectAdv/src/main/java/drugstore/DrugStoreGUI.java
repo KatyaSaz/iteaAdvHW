@@ -1,7 +1,9 @@
 package drugstore;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -18,11 +20,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
@@ -78,6 +75,7 @@ public class DrugStoreGUI extends Application {
 	}
 	
 	public void startWindow(final Stage primaryStage) {
+		
 		GridPane root = new GridPane();
 		root.setId("startroot");
 		Label labelChashireName = new Label("Input Name of pharmacists: ");
@@ -185,31 +183,19 @@ public class DrugStoreGUI extends Application {
 		root.add(taTest2, 1, 1);
 		root.add(taTest3, 2, 1);
 		root.setId("pane"); 
-		
-//		InputStream imgStream = null;
-//		try {
-//			imgStream = getClass().getResource("pharmacy.jpg").openStream();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		
-//		BackgroundImage img = new BackgroundImage(new Image(imgStream), 
-//				BackgroundRepeat.ROUND, BackgroundRepeat.ROUND,
-//				BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-//		root.setBackground(new Background(img));
+
 		Scene scene = new Scene(root, 1300, 700);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		primaryStage.setScene(scene);
-		//primaryStage.setHeight(800);
-		//primaryStage.setWidth(1200);
 		primaryStage.setFullScreen(true);
+		
 		primaryStage.show();
+		
 		
 		createDrugStore(tfLCasName1.getText(), taTest1, Integer.parseInt(tfAmountV1.getText()));
 		createDrugStore(tfLCasName2.getText(), taTest2, Integer.parseInt(tfAmountV2.getText()));
 		createDrugStore(tfLCasName3.getText(), taTest3, Integer.parseInt(tfAmountV3.getText()));
 	}
-	
 
 	 public static void main( String[] args )  {
 	   	launch(args);
