@@ -1,1 +1,1 @@
-It is the place where my homework for courses.
+The name of DB must be 'pharmacy', data for import is in file pharmacy.sql
